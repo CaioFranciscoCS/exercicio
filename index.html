@@ -6,18 +6,28 @@
     <title>Document</title>
 </head>
 <body>
-    <button onclick="getUsers()">users</button>
-    <h1 class="title"></h1>
-    <p class="body"></p>
+    <button onclick="getUsers()">teste</button>
+    <h1 class="name"></h1>
+    <h1 class="username"></h1>
+    <h1 class="email"></h1>
+    <h1 class="phone"></h1>
+    <h1 class="website"></h1>
+    <h1 class="address"></h1>
+    <h1 class="company"></h1>
     <script>
         async function getUsers() {
-            const resp = await fetch("https://placeholder.typicode.com/post/1")
+            const resp = await fetch("https://jsonplaceholder.typicode.com/users/1")
             const posts = await resp.json()
 
-            document.querySelector(".title").innerText = posts.title
-            document.querySelector(".body").innerText = posts.body
-        }
-        getUsers()
+            document.querySelector(".name").innerText = posts.name
+            document.querySelector(".username").innerText = posts.username
+            document.querySelector(".email").innerText = posts.email
+            document.querySelector(".phone").innerText = posts.phone
+            document.querySelector(".website").innerText = posts.website
+            document.querySelector(".address").innerText = posts.address
+            document.querySelector(".company").innerText = posts.company
+        } 
+            getUsers()
     </script>
 </body>
 </html>
