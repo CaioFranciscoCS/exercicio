@@ -1,0 +1,40 @@
+:root {
+    --bg: #d4d8dc;
+    --font-h1: #31353E;
+    --font-small: #4C4F57;
+    --img-bg: #fff;
+    --img-bg2: #f1f1f1;
+    --border: #F4A937;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: 'ubuntu';
+    background-color:var(--bg);
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    text-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+    height: 100px;
+    align-items: center;
+    font-size: 25px;
+    background-color: var(--img-bg);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+}
+
+#main {
+    margin: 20px 400px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+}
+.card {
+    flex-direction: column;
+    display: flex;
+    background-color:var(--img-bg);
+    gap: 20px;
+}

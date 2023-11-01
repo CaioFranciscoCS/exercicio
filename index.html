@@ -3,31 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/font.css">
     <title>Document</title>
 </head>
 <body>
-    <button onclick="getUsers()">teste</button>
-    <h1 class="name"></h1>
-    <h1 class="username"></h1>
-    <h1 class="email"></h1>
-    <h1 class="phone"></h1>
-    <h1 class="website"></h1>
-    <h1 class="address"></h1>
-    <h1 class="company"></h1>
-    <script>
-        async function getUsers() {
-            const resp = await fetch("https://jsonplaceholder.typicode.com/users/1")
-            const posts = await resp.json()
+    <p class="name"></p>
+    <p class="username"></p>
+    <p class="email"></p>
+    <p class="phone"></p>
+    <p class="website"></p>
+    <p class="address"><p>
+    <p class="company"><p>
 
-            document.querySelector(".name").innerText = posts.name
-            document.querySelector(".username").innerText = posts.username
-            document.querySelector(".email").innerText = posts.email
-            document.querySelector(".phone").innerText = posts.phone
-            document.querySelector(".website").innerText = posts.website
-            document.querySelector(".address").innerText = posts.address
-            document.querySelector(".company").innerText = posts.company
-        } 
-            getUsers()
-    </script>
+    <header id="header">
+        <h1>Users List</h1>
+    </header>
+    <main id="main">
+        <section class="card">
+            <h2 class="card-title">Lista de Usuários</h2>
+                <table class="card-table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Usuários</th>
+                            <th>Email</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody class="js-user-line"></tbody>
+                </table>
+        </section>
+    </main>
+    <script src="assets/js/app.js"></script>
 </body>
 </html>
