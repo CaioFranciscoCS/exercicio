@@ -22,19 +22,40 @@
     <main id="main">
         <section class="card">
             <h2 class="card-title">Lista de Usuários</h2>
-                <table class="card-table">
-                    <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Usuários</th>
-                            <th>Email</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody class="js-user-line"></tbody>
-                </table>
-        </section>
-    </main>
-    <script src="assets/js/app.js"></script>
+            <table class="card-table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Usuários</th>
+                        <th>Email</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="js-user-line"></tbody>
+            </table>
+            <section class="user.form">
+                    <div class="row">
+                        <div class="col">
+                            <label for="Usuário">Nome</label>
+                            <input type="text" name="nome" class="js-user-name">
+                        </div>
+                        <div class="col">
+                            <label for="Usuário">Usuário</label>
+                            <input type="text" name="username" class="js-user-username">
+                        </div>    
+                        <div class="col">
+                            <label for="Usuário">Email</label>
+                            <input type="text" name="email" class="js-user-email">
+                        </div>    
+                        <div class="col">
+                            <label for="Usuário">Empresa</label>
+                            <input type="text" name="company" class="js-user-company">
+                        </div>    
+                    </div>
+                </section>
+            </section>
+            <div class="tips"></div>
+        </main>
+            <script src="assets/js/app.js"></script>
 </body>
 </html>

@@ -3,14 +3,6 @@ async function getUsers() {
     const users = await resp.json();
 
     return users;
-
-    //document.querySelector(".name").innerText = posts.name
-    //document.querySelector(".username").innerText = posts.username
-    //document.querySelector(".email").innerText = posts.email
-    //document.querySelector(".phone").innerText = posts.phone
-    // document.querySelector(".website").innerText = posts.website
-    //document.querySelector(".address").innerText = `${posts.address.street}, ${posts.address.city}, ${posts.address.zipcode}`
-    //document.querySelector(".company").innerText = posts.company.name
 } 
 
 async function updateTable () {
@@ -24,7 +16,7 @@ async function updateTable () {
             <td>${user.username}</td>
             <td>${user.email}</td>
             <td>
-                <button>exibir</button>
+                <button onclick="userDetail(${user.id})">exibir</button>
             </td>
         </tr>
         `
@@ -32,5 +24,29 @@ async function updateTable () {
     }
     tableBody.innerHTML = linhas
 }
+
+async function userDetail(userId) {
+    const resp = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
+    const user = await resp.json();
+
+    document.querySelector(".js-user-name").value = user.name
+    document.querySelector(".js-user-username").value = user.username
+    document.querySelector(".js-user-email").value = user.email
+    document.querySelector(".js-user-company").value = user.company.name
+}
+
+async function getTips() {
+    const resp = await fetch("https://api.adviceslip.com/advice")
+    const tip = await resp.json();
+
+    setTimeout(()=> {
+        document.querySelector(".tips").innerText = tip.slip.advice
+        document.querySelector(".tips").style.display = "inline-block"
+    }, 5000)
+}
+setInterval(()=> {
+    getTips()
+    document.querySelector(".tips").style.display = "none"
+}, 8000)
 
 updateTable()
